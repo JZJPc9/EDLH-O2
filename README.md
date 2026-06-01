@@ -1,14 +1,4 @@
-# 📐 DiffSolve-H2
 ### *Resolutor de Ecuaciones Diferenciales Homogéneas de 2do Orden*
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" alt="Status">
-  <img src="https://img.shields.io/badge/Language-JavaScript-yellow?style=for-the-badge&logo=javascript" alt="Language">
-  <img src="https://img.shields.io/badge/Styling-TailwindCSS-blue?style=for-the-badge&logo=tailwind-css" alt="Styling">
-  <img src="https://img.shields.io/badge/Math-KaTeX-red?style=for-the-badge" alt="Math">
-</p>
-
----
 
 ## Presentación
 **Ecuaciones Diferencials** 
