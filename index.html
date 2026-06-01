@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiffSolve-H2 | Resolutor de ED Homogéneas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white py-8 px-4 shadow-lg">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Ecuaciones Diferenciales</h1>
+            <p class="text-indigo-100 text-sm md:text-base">Resolusor de Ecuaciones Diferenciales Homogéneas de 2do Orden</p>
+            <p class="text-indigo-200 text-xs mt-1 italic">Integrantes: Garza Roblez Gerardo, Jimenez Zea Juan Pablo</p>
+        </div>
+    </header>
+
+    <main class="flex-grow py-10 px-4">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Input Section -->
+            <section class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-slate-200 mb-8">
+                <h2 class="text-xl font-semibold mb-6 flex items-center gap-2 text-slate-700">
+                    <span class="bg-indigo-100 text-indigo-600 p-1 rounded">01</span>
+                    Configura tu Ecuación
+                </h2>
+
+                <div class="flex flex-col items-center justify-center py-10">
+                    <div class="equation-input-container flex flex-wrap items-center justify-center gap-2 text-xl md:text-2xl font-serif italic">
+                        <input type="number" id="coeffA" placeholder="A" class="eq-input" step="any">
+                        <span class="math-text">y'' +</span>
+                        <input type="number" id="coeffB" placeholder="B" class="eq-input" step="any">
+                        <span class="math-text">y' +</span>
+                        <input type="number" id="coeffC" placeholder="C" class="eq-input" step="any">
+                        <span class="math-text">y = 0</span>
+                    </div>
+
+                    <button onclick="solve()" class="w-full max-w-xs mt-12 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-md active:scale-95">
+                        Resolver Ecuación
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsArea" class="hidden space-y-6">
+                <h2 class="text-xl font-semibold mb-4 text-slate-600 px-2 italic">Proceso de Resolución:</h2>
+
+                <!-- Step 1: Characteristic Eq -->
+                <div class="math-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-xs font-bold text-indigo-500 uppercase tracking-wider mb-2">Ecuación Característica</p>
+                    <div id="resCharEq" class="text-xl text-center py-4"></div>
+                </div>
+
+                <!-- Step 2: Roots -->
+                <div class="math-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-xs font-bold text-indigo-500 uppercase tracking-wider mb-2">Raíces del Sistema</p>
+                    <div id="resRoots" class="text-xl text-center py-4"></div>
+                </div>
+
+                <!-- Step 3: Fundamental Solutions -->
+                <div class="math-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-xs font-bold text-indigo-500 uppercase tracking-wider mb-2">Soluciones Fundamentales</p>
+                    <div id="resY1Y2" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center py-4">
+                        <div id="resY1" class="p-3 bg-slate-50 rounded-lg border border-slate-100"></div>
+                        <div id="resY2" class="p-3 bg-slate-50 rounded-lg border border-slate-100"></div>
+                    </div>
+                </div>
+
+                <!-- Step 4: General Solution -->
+                <div class="math-card bg-indigo-50 p-6 rounded-xl border-2 border-indigo-200 shadow-md">
+                    <p class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">Solución General</p>
+                    <div id="resGeneral" class="text-2xl text-center py-6 font-semibold text-indigo-900"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="py-6 text-center text-slate-400 text-xs">
+        &copy; XD -> Si nos quiere encontrar en github somos: JZJPc9 y GerarGR
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

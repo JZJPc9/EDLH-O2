@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Serif:italic,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.math-text {
+    font-family: 'Noto Serif', serif;
+}
+
+.eq-input {
+    width: 60px;
+    text-align: center;
+    border-bottom: 2px solid #6366f1;
+    background: transparent;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #4338ca;
+    padding: 2px 0;
+}
+
+.eq-input:focus {
+    border-bottom-color: #4338ca;
+    background-color: #eef2ff;
+    width: 80px;
+}
+
+.math-card {
+    transition: all 0.3s ease;
+}
+
+.math-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Chrome, Safari, Edge, Opera - remove arrows from number inputs */
+.eq-input::-webkit-outer-spin-button,
+.eq-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox - remove arrows from number inputs */
+.eq-input[type=number] {
+  -moz-appearance: textfield;
+}
